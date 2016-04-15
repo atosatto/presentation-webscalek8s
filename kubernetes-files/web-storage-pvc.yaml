@@ -1,0 +1,15 @@
+# This PersistentVolumeClaim claims 5GB of storage
+# for the web-application.
+# The storage will be shared among the frontend and backend tiers
+# of the web-application.
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: web-storage-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi

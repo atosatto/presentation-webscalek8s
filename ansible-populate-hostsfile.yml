@@ -1,0 +1,35 @@
+###
+# Populates the /etc/hosts file of each node with the private IP address of
+# each cluster member.
+###
+
+- hosts: all
+  sudo: yes
+  vars:
+    # Assuming that the private_iface is not the default_ipv4_interface, neither localhost, docker0 or flannel.1
+    - private_iface: "{{ ansible_interfaces | difference([ansible_default_ipv4.interface, 'lo', 'docker0', 'flannel.1']) | first }}"
+  tasks:
+    - name: "Check is /etc/hosts file exists"
+      stat: path=/etc/hosts
+      register: hosts
+
+    - name: "Create hosts file if it is not present"
+      file: path=/etc/hosts state=touch
+      when: not hosts.stat.exists
+
+    - name: "Build hosts file"
+      lineinfile:
+        dest=/etc/hosts
+        regexp=".*{{ item }}$"
+        line="{{ hostvars[item]['ansible_' + private_iface].ipv4.address }} {{item}}"
+        state=present
+      when: hostvars[item]['ansible_' + private_iface].ipv4.address is defined
+      with_items: groups['all']
+
+    - name: "Remove hostname from localhost line"
+      replace:
+        dest=/etc/hosts
+        regexp="{{ item }} localhost?"
+        replace="localhost"
+      when: hostvars[item]['ansible_' + private_iface].ipv4.address is defined
+      with_items: groups['all']

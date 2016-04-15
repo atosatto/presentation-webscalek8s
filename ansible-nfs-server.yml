@@ -1,0 +1,44 @@
+###
+# Setup NFS servers and clients.
+###
+
+- hosts: nfs
+  sudo: yes
+  vars:
+    nfs_root: /root/nfs
+  tasks:
+    - name: "Install the required packages"
+      package: name="{{ item }}" state=present
+      with_items:
+        - nfs-utils
+        - rpcbind
+
+    - name: "Create NFS root directory"
+      file: path="{{ nfs_root }}" state=directory
+      when: "'nfs-server' in group_names"
+
+    - name: "Export the NFS root directory to all the clients"
+      lineinfile:
+        dest=/etc/exports
+        regexp="{{ nfs_root }}.*"
+        line="{{ nfs_root }} {% for item in groups['nfs-client'] %}{{ item }}(rw,sync,no_root_squash,no_subtree_check) {% endfor %}"
+        state=present
+      when: "'nfs-server' in group_names"
+
+    - name: "Enables and/or restart the NFS services on the server"
+      service:
+        name="{{ item }}"
+        state=restarted
+      with_items:
+        - rpcbind
+        - nfs
+      when: "'nfs-server' in group_names"
+
+    - name: "Enables and/or restart the NFS services on the clients"
+      service:
+        name="{{ item }}"
+        state=restarted
+      with_items:
+        - rpcbind
+        - rpc-statd
+      when: "'nfs-client' in group_names"

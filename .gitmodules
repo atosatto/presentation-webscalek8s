@@ -1,0 +1,3 @@
+[submodule "kubernetes-contrib"]
+	path = kubernetes-contrib
+	url = https://github.com/kubernetes/contrib.git

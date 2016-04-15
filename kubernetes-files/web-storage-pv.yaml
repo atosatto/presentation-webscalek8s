@@ -1,0 +1,15 @@
+# This PersistentVolume allocates 5GB of storage on the given
+# NFS server to be used as persistent storage backend.
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: web-storage
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: kube-master-1
+    path: "/root/nfs"

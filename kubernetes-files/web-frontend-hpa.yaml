@@ -1,0 +1,15 @@
+# Autoscale the web-frontend 
+
+apiVersion: extensions/v1beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: web-frontend
+spec:
+  cpuUtilization:
+    targetPercentage: 50
+  maxReplicas: 10
+  minReplicas: 3
+  scaleRef:
+    kind: ReplicationController
+    name: web-frontend
+    subresource: scale
