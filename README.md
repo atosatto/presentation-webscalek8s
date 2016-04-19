@@ -3,7 +3,7 @@
 
 ## Talk
 
-### Abstract [ITA]
+#### Abstract [ITA]
 
 La capacità di rispondere in poche frazioni di secondo alle richieste degli utenti - indipendentemente dal loro numero - è un fattore determinante per il successo dei servizi sul web. Secondo Amazon,  bastano 100 millisecondi di latenza nella risposta per generare una perdita economica di circa l'1% sul
 fatturato [1]. In base alle statistiche di Google AdWords, inoltre, il 2015 ha sancito l’ufficiale superamento del numero di interazioni mobile rispetto a quelle desktop [2], con la conseguente riduzione della durata media delle sessioni di navigazione web.
@@ -15,7 +15,7 @@ Concluderemo l’intervento presentando il nostro progetto di distribuzione geog
 [1] http://radar.oreilly.com/2008/08/radar-theme-web-ops.html <br/>
 [2] http://searchengineland.com/its-official-google-says-more-searches-now-on-mobile-than-on-desktop-220369
 
-### Slides
+#### Slides
 
 http://www.slideshare.net/purpleocean/web-scale-infrastructures-with-kubernetes-and-flannel
 
@@ -28,12 +28,12 @@ These files can be used to
 3. Run a LAMP stack on Kubernetes leveraging the concepts of `HorizontalPodAutoscaler` and `ReplicationController`
    to guarantee the web applications auto-scaling and self-healing.
 
-### Requirements
+#### Requirements
 
 - Vagrant >= 1.8
 - Ansible >= 2.0
 
-### Setup
+#### Setup
 
 1. Get the submodules
 
@@ -64,7 +64,7 @@ following content
   vagrant up --provider=digital_ocean
   ```
 
-### Run the sample on Kubernetes
+#### Run the sample on Kubernetes
 
 1. Create the persistent volume and the persistent volume claim for your NFS server.
 
