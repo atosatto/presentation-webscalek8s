@@ -1,14 +1,11 @@
+
 # WebScale infrastructure with Kubernetes and Flannel
 
-## Acknowledge
-
-The present work has been developed thanks to the great support of every single
-person working at [PurpleOcean](www.purpleocean.it).
-Thank you!
-
-![purpleocean](http://url/to/img.png)
-
 ## Talk
+
+### Slides
+
+http://www.slideshare.net/purpleocean/web-scale-infrastructures-with-kubernetes-and-flannel
 
 ### Abstract [ITA]
 
@@ -21,6 +18,8 @@ Concluderemo l’intervento presentando il nostro progetto di distribuzione geog
 
 [1] http://radar.oreilly.com/2008/08/radar-theme-web-ops.html <br/>
 [2] http://searchengineland.com/its-official-google-says-more-searches-now-on-mobile-than-on-desktop-220369
+
+### Slides
 
 ## Source Code
 
@@ -98,3 +97,12 @@ following content
   vagrant ssh kube-master-1
   kubectl create -f /vagrant/kubernetes-files/web-frontend-hpa.yaml
   ```
+
+## Acknowledge
+
+The present work has been developed thanks to the great support of every single
+person working at [PurpleOcean](www.purpleocean.it). <br/>
+<center>
+  <h3>Thank you!<h3>
+  <img src="http://www.purpleocean.it/wp-content/uploads/2016/04/purpleocean-logo.png" />
+</center>
