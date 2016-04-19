@@ -3,10 +3,6 @@
 
 ## Talk
 
-### Slides
-
-http://www.slideshare.net/purpleocean/web-scale-infrastructures-with-kubernetes-and-flannel
-
 ### Abstract [ITA]
 
 La capacità di rispondere in poche frazioni di secondo alle richieste degli utenti - indipendentemente dal loro numero - è un fattore determinante per il successo dei servizi sul web. Secondo Amazon,  bastano 100 millisecondi di latenza nella risposta per generare una perdita economica di circa l'1% sul
@@ -20,6 +16,8 @@ Concluderemo l’intervento presentando il nostro progetto di distribuzione geog
 [2] http://searchengineland.com/its-official-google-says-more-searches-now-on-mobile-than-on-desktop-220369
 
 ### Slides
+
+http://www.slideshare.net/purpleocean/web-scale-infrastructures-with-kubernetes-and-flannel
 
 ## Source Code
 
