@@ -17,7 +17,7 @@ Concluderemo l’intervento presentando il nostro progetto di distribuzione geog
 
 #### Slides
 
-http://www.slideshare.net/purpleocean/web-scale-infrastructures-with-kubernetes-and-flannel
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/xHgqtoEm8xAMjt" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/purpleocean/web-scale-infrastructures-with-kubernetes-and-flannel" title="Web scale infrastructures with kubernetes and flannel" target="_blank">Web scale infrastructures with kubernetes and flannel</a> </strong> from <strong><a href="//www.slideshare.net/purpleocean" target="_blank">purpleocean</a></strong> </div>
 
 ## Source Code
 
